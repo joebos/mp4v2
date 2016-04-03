@@ -19,7 +19,6 @@
 #define MP4V2_PROJECT_version_point   0
 #define MP4V2_PROJECT_repo_url        "https://mp4v2.googlecode.com/svn/trunk"
 #define MP4V2_PROJECT_repo_root       "https://mp4v2.googlecode.com/svn"
-#define MP4V2_PROJECT_repo_uuid       "6e6572fa-98a6-11dd-ad9f-f77439c74b79"
 #define MP4V2_PROJECT_repo_rev        477
 #define MP4V2_PROJECT_repo_date       "2011-06-25 15:50:07 -0700 (Sat, 25 Jun 2011)"
 #define MP4V2_PROJECT_repo_type       "developer"

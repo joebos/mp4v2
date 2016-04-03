@@ -17,7 +17,6 @@ include(<<project.m4>>)dnl
 @set PROJECT.repo.url        __PROJECT_repo_url
 @set PROJECT.repo.branch     __PROJECT_repo_branch
 @set PROJECT.repo.root       __PROJECT_repo_root
-@set PROJECT.repo.uuid       __PROJECT_repo_uuid
 @set PROJECT.repo.rev        __PROJECT_repo_rev
 @set PROJECT.repo.date       __PROJECT_repo_date
 @set PROJECT.repo.type       __PROJECT_repo_type

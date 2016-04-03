@@ -20,7 +20,6 @@
 #define MP4V2_PROJECT_repo_url        "@PROJECT_repo_url@"
 #define MP4V2_PROJECT_repo_branch     "@PROJECT_repo_branch@"
 #define MP4V2_PROJECT_repo_root       "@PROJECT_repo_root@"
-#define MP4V2_PROJECT_repo_uuid       "@PROJECT_repo_uuid@"
 #define MP4V2_PROJECT_repo_rev        @PROJECT_repo_rev@
 #define MP4V2_PROJECT_repo_date       "@PROJECT_repo_date@"
 #define MP4V2_PROJECT_repo_type       "@PROJECT_repo_type@"
