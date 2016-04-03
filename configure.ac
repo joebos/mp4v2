@@ -5,12 +5,12 @@
 m4_include([project/project.m4sugar])
 
 m4_define([SVNINFO],m4_esyscmd([LANG=en svn info 2>/dev/null]))
+m4_define(PRJ_repo_url, m4_esyscmd_s(git ls-remote --get-url))
+m4_define(PRJ_repo_date, m4_esyscmd_s(git log -1 --format=%ci))
 
 changequote(<<,>>)dnl
-    m4_define(<<PRJ_repo_url>>,m4_esyscmd(<<git ls-remote --get-url|tr -d '\n'>>))
     m4_define(<<PRJ_repo_branch>>,m4_bregexp(PRJ_repo_url,<<\([^/]+\)$>>,<<\1>>))
     m4_define(<<PRJ_repo_rev>>,m4_bregexp(SVNINFO,<<^Last Changed Rev: *\(.+\)>>,<<\1>>))
-    m4_define(<<PRJ_repo_date>>,m4_esyscmd(<<git log -1 --format=%ci|tr -d '\n'>>))
     m4_define(<<PRJ_repo_type>>,ifelse(m4_bregexp(PRJ_repo_url,<</releases/>>),<<-1>>,<<developer>>,<<stable>>))
 changequote([,])dnl
 
