@@ -10,7 +10,7 @@ changequote(<<,>>)dnl
     m4_define(<<PRJ_repo_url>>,m4_bregexp(SVNINFO,<<^URL: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_branch>>,m4_bregexp(PRJ_repo_url,<<\([^/]+\)$>>,<<\1>>))
     m4_define(<<PRJ_repo_rev>>,m4_bregexp(SVNINFO,<<^Last Changed Rev: *\(.+\)>>,<<\1>>))
-    m4_define(<<PRJ_repo_date>>,m4_esyscmd(<<git log -1 --format=format:%ci>>))
+    m4_define(<<PRJ_repo_date>>,m4_esyscmd(<<git log -1 -z --format=%ci>>))
     m4_define(<<PRJ_repo_type>>,ifelse(m4_bregexp(PRJ_repo_url,<</releases/>>),<<-1>>,<<developer>>,<<stable>>))
 changequote([,])dnl
 
