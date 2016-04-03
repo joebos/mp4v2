@@ -150,6 +150,7 @@ libmp4v2_la_SOURCES += \
     libplatform/platform.h               \
     libplatform/platform_base.h          \
     libplatform/platform_posix.h         \
+    libplatform/platform_win32.cpp       \
     libplatform/platform_win32.h         \
     libplatform/process/process.h        \
     libplatform/prog/option.cpp          \
