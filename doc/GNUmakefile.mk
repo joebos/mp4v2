@@ -271,7 +271,7 @@ google.post: | $(GOOGLE.out/)
 google.post: google.rsync google.rm google.add google.propset
 
 $(GOOGLE.out/):
-	svn co --depth immediates $(PROJECT_repo_root) $(GOOGLE.out/)
+	svn co --depth immediates $(PROJECT_repo_url) $(GOOGLE.out/)
 	svn update --set-depth immediates google/wiki
 	svn update --set-depth infinity google/doc/$(GOOGLE.repo.doc)
 

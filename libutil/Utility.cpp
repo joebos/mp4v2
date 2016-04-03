@@ -429,7 +429,6 @@ Utility::printVersion( bool extended )
             << '\n' << setw(13) << "build date:" << MP4V2_PROJECT_build
             << '\n'
             << '\n' << setw(18) << "repository URL:" << MP4V2_PROJECT_repo_url
-            << '\n' << setw(18) << "repository root:" << MP4V2_PROJECT_repo_root
             << '\n' << setw(18) << "repository rev:" << MP4V2_PROJECT_repo_rev
             << '\n' << setw(18) << "repository date:" << MP4V2_PROJECT_repo_date
             << '\n' << setw(18) << "repository type:" << MP4V2_PROJECT_repo_type;

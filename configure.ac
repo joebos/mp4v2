@@ -9,7 +9,6 @@ m4_define([SVNINFO],m4_esyscmd([LANG=en svn info 2>/dev/null]))
 changequote(<<,>>)dnl
     m4_define(<<PRJ_repo_url>>,m4_bregexp(SVNINFO,<<^URL: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_branch>>,m4_bregexp(PRJ_repo_url,<<\([^/]+\)$>>,<<\1>>))
-    m4_define(<<PRJ_repo_root>>,m4_bregexp(SVNINFO,<<^Repository Root: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_rev>>,m4_bregexp(SVNINFO,<<^Last Changed Rev: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_date>>,m4_bregexp(SVNINFO,<<^Last Changed Date: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_type>>,ifelse(m4_bregexp(PRJ_repo_url,<</releases/>>),<<-1>>,<<developer>>,<<stable>>))
@@ -131,7 +130,6 @@ PROJECT_version_minor="PRJ_version_minor"
 PROJECT_version_point="PRJ_version_point"
 PROJECT_repo_url="PRJ_repo_url"
 PROJECT_repo_branch="PRJ_repo_branch"
-PROJECT_repo_root="PRJ_repo_root"
 PROJECT_repo_rev="PRJ_repo_rev"
 PROJECT_repo_date="PRJ_repo_date"
 PROJECT_repo_type="PRJ_repo_type"
@@ -143,7 +141,6 @@ test -z "$PROJECT_version_minor" && PROJECT_version_minor="0"
 test -z "$PROJECT_version_point" && PROJECT_version_point="0"
 test -z "$PROJECT_repo_url"      && PROJECT_repo_url="svn://nowhere.com/project/unknown"
 test -z "$PROJECT_repo_branch"   && PROJECT_repo_branch="unknown"
-test -z "$PROJECT_repo_root"     && PROJECT_repo_root="svn://nowhere.com/project"
 test -z "$PROJECT_repo_rev"      && PROJECT_repo_rev="0"
 test -z "$PROJECT_repo_date"     && PROJECT_repo_date="unknown"
 test -z "$PROJECT_repo_type"     && PROJECT_repo_type="unknown"
@@ -165,7 +162,6 @@ AC_SUBST([PROJECT_version_minor])
 AC_SUBST([PROJECT_version_point])
 AC_SUBST([PROJECT_repo_url])
 AC_SUBST([PROJECT_repo_branch])
-AC_SUBST([PROJECT_repo_root])
 AC_SUBST([PROJECT_repo_rev])
 AC_SUBST([PROJECT_repo_date])
 AC_SUBST([PROJECT_repo_type])
