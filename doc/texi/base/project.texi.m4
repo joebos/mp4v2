@@ -15,7 +15,6 @@ include(<<project.m4>>)dnl
 @set PROJECT.version.minor   __PROJECT_version_minor
 @set PROJECT.version.point   __PROJECT_version_point
 @set PROJECT.repo.url        __PROJECT_repo_url
-@set PROJECT.repo.branch     __PROJECT_repo_branch
 @set PROJECT.repo.rev        __PROJECT_repo_rev
 @set PROJECT.repo.date       __PROJECT_repo_date
 @set PROJECT.repo.type       __PROJECT_repo_type

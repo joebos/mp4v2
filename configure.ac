@@ -9,7 +9,6 @@ m4_define(PRJ_repo_url, m4_esyscmd_s(git ls-remote --get-url))
 m4_define(PRJ_repo_date, m4_esyscmd_s(git log -1 --format=%ci))
 
 changequote(<<,>>)dnl
-    m4_define(<<PRJ_repo_branch>>,m4_bregexp(PRJ_repo_url,<<\([^/]+\)$>>,<<\1>>))
     m4_define(<<PRJ_repo_rev>>,m4_bregexp(SVNINFO,<<^Last Changed Rev: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_type>>,ifelse(m4_bregexp(PRJ_repo_url,<</releases/>>),<<-1>>,<<developer>>,<<stable>>))
 changequote([,])dnl
@@ -127,7 +126,6 @@ PROJECT_version_major="PRJ_version_major"
 PROJECT_version_minor="PRJ_version_minor"
 PROJECT_version_point="PRJ_version_point"
 PROJECT_repo_url="PRJ_repo_url"
-PROJECT_repo_branch="PRJ_repo_branch"
 PROJECT_repo_rev="PRJ_repo_rev"
 PROJECT_repo_date="PRJ_repo_date"
 PROJECT_repo_type="PRJ_repo_type"
@@ -138,7 +136,6 @@ test -z "$PROJECT_version_major" && PROJECT_version_major="0"
 test -z "$PROJECT_version_minor" && PROJECT_version_minor="0"
 test -z "$PROJECT_version_point" && PROJECT_version_point="0"
 test -z "$PROJECT_repo_url"      && PROJECT_repo_url="svn://nowhere.com/project/unknown"
-test -z "$PROJECT_repo_branch"   && PROJECT_repo_branch="unknown"
 test -z "$PROJECT_repo_rev"      && PROJECT_repo_rev="0"
 test -z "$PROJECT_repo_date"     && PROJECT_repo_date="unknown"
 test -z "$PROJECT_repo_type"     && PROJECT_repo_type="unknown"
@@ -159,7 +156,6 @@ AC_SUBST([PROJECT_version_major])
 AC_SUBST([PROJECT_version_minor])
 AC_SUBST([PROJECT_version_point])
 AC_SUBST([PROJECT_repo_url])
-AC_SUBST([PROJECT_repo_branch])
 AC_SUBST([PROJECT_repo_rev])
 AC_SUBST([PROJECT_repo_date])
 AC_SUBST([PROJECT_repo_type])

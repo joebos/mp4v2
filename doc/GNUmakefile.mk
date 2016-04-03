@@ -261,7 +261,7 @@ $(DOC.site.out.html): $(DOC.out.site/)%: $(DOC.out.articles/)html/%
 ###############################################################################
 
 GOOGLE.out/      = $(top_builddir)/google/
-GOOGLE.repo.doc  = $(PROJECT_repo_branch)
+GOOGLE.repo.doc  = $(PROJECT_version)
 
 google.clean:
 	rm -fr $(GOOGLE.out/)
