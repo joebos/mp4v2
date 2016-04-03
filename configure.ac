@@ -16,9 +16,7 @@ changequote([,])dnl
 
 m4_define([PRJ_version_hex],m4_format([0x%04x%02x%02x],PRJ_version_major,PRJ_version_minor,PRJ_version_point))
 
-m4_define([PRJ_version],ifelse(
-    PRJ_repo_type,[stable],m4_format([%s],PRJ_repo_branch),
-    m4_format([%s-r%s],PRJ_repo_branch,PRJ_repo_rev)))
+m4_define(PRJ_version, m4_esyscmd_s(git describe --tags))
 
 ###############################################################################
 # initialization
