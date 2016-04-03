@@ -7,7 +7,7 @@ m4_include([project/project.m4sugar])
 m4_define([SVNINFO],m4_esyscmd([LANG=en svn info 2>/dev/null]))
 
 changequote(<<,>>)dnl
-    m4_define(<<PRJ_repo_url>>,m4_esyscmd(<<git config -z remote.origin.url>>))
+    m4_define(<<PRJ_repo_url>>,m4_esyscmd(<<git ls-remote --get-url|tr -d '\n'>>))
     m4_define(<<PRJ_repo_branch>>,m4_bregexp(PRJ_repo_url,<<\([^/]+\)$>>,<<\1>>))
     m4_define(<<PRJ_repo_rev>>,m4_bregexp(SVNINFO,<<^Last Changed Rev: *\(.+\)>>,<<\1>>))
     m4_define(<<PRJ_repo_date>>,m4_esyscmd(<<git log -1 --format=%ci|tr -d '\n'>>))
