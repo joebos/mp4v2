@@ -2,19 +2,14 @@
 # prelude
 ###############################################################################
 
-m4_include([project/project.m4sugar])
+m4_include(project/project.m4sugar)
 
-m4_define([SVNINFO],m4_esyscmd([LANG=en svn info 2>/dev/null]))
 m4_define(PRJ_repo_url, m4_esyscmd_s(git ls-remote --get-url))
 m4_define(PRJ_repo_date, m4_esyscmd_s(git log -1 --format=%ci))
-
-changequote(<<,>>)dnl
-    m4_define(<<PRJ_repo_type>>,ifelse(m4_bregexp(PRJ_repo_url,<</releases/>>),<<-1>>,<<developer>>,<<stable>>))
-changequote([,])dnl
-
-m4_define([PRJ_version_hex],m4_format([0x%04x%02x%02x],PRJ_version_major,PRJ_version_minor,PRJ_version_point))
-
 m4_define(PRJ_version, m4_esyscmd_s(git describe --tags))
+m4_define(PRJ_repo_type,ifelse(m4_bregexp(PRJ_version,-),-1,stable,developer))
+m4_define(PRJ_version_hex,m4_format(0x%04x%02x%02x,PRJ_version_major,
+  PRJ_version_minor,PRJ_version_point))
 
 ###############################################################################
 # initialization
