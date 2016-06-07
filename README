@@ -1,5 +1,7 @@
-All docs are located in doc/ subdirectory. Useful starting points:
+All docs are located on the wiki branch. Useful starting points:
 
-Release Notes           -- doc/ReleaseNotes.txt
-Building the Source     -- doc/BuildSource.txt
-Building the Repository -- doc/BuildRepository.txt
+Building the Source
+http://github.com/svnpenn/mp4v2/blob/wiki/BuildSource.md
+
+Building the Repository
+http://github.com/svnpenn/mp4v2/blob/wiki/BuildRepository.md
