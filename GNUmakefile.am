@@ -1,3 +1,4 @@
+#-*-makefile-*-
 lib_LTLIBRARIES = libmp4v2.la
 
 bin_PROGRAMS =
@@ -6,9 +7,9 @@ check_PROGRAMS =
 
 ###############################################################################
 
-libmp4v2_la_LDFLAGS = \
-    $(AM_LDFLAGS) \
-    -version-number $(PROJECT_version_major):$(PROJECT_version_minor):$(PROJECT_version_point) $(X_libmp4v2_la_LDFLAGS)
+libmp4v2_la_LDFLAGS = $(AM_LDFLAGS) -version-number \
+  $(PROJECT_version_major):$(PROJECT_version_minor):$(PROJECT_version_point) \
+  $(X_libmp4v2_la_LDFLAGS)
 
 libmp4v2_la_SOURCES = \
     src/3gp.cpp                          \
@@ -232,7 +233,8 @@ DEJATOOL = main
 
 TESTLOGDIR = $(top_builddir)/testlog
 
-override RUNTESTDEFAULTFLAGS = --tool $$tool --srcdir $$srcdir/testsuite --outdir $(TESTLOGDIR)
+override RUNTESTDEFAULTFLAGS = --tool $$tool --srcdir $$srcdir/testsuite \
+  --outdir $(TESTLOGDIR)
 
 ###############################################################################
 
